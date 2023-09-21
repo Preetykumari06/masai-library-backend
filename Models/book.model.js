@@ -8,7 +8,7 @@ const bookSchema=mongoose.Schema({
    quantity:{type:Number}
 })
 
-const bookModel=mongoose.model("book", bookSchemaSchema);
+const bookModel=mongoose.model("book", bookSchema);
 
 module.exports={
     bookModel

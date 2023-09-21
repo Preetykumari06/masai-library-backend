@@ -1,9 +1,13 @@
 const express=require("express");
-const {connection}=require("./db")
+const {connection}=require("./db");
+const { userRouter }=require("./Routes/user.routes");
 require('dotenv').config();
 
 const app=express();
 app.use(express.json());
+
+app.use("/users",userRouter);
+
 
 
 app.get("/",(req,res)=>{

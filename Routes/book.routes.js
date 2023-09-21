@@ -28,8 +28,8 @@ bookRouter.get("/api/books", async(req,res) => {
 bookRouter.get("/api/books/:id", async(req,res) => {
     const {id}=req.params;
     try{
-        await bookModel.find({_id:id},req.body);
-        res.status(200).json({msg:"Specific book present in the database."})
+        const books=await bookModel.find({_id:id},req.body);
+        res.status(200).json({msg:"Specific book present in the database.",books})
     }catch(err){
         res.status(400).json({"error":err.message})
     }
